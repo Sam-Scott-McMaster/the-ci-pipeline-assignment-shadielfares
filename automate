@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+git add .
+git commit -m "$1"
+
+# Check if the second argument (tag) is provided
+if [["$2" == 0 ]]; then
+    # No tag provided, so just push to origin
+    git push 
+else
+    # Tag provided, push the tag to origin
+    git tag "$2"
+    git push origin 
+fi
+
